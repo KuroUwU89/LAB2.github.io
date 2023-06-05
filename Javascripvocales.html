@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio 3</title>
+   <link rel="stylesheet" href="ollie.css">	
+
+
+	<title>Identificar vocales</title>
+  <script>
+    function identificarVocales() {
+      // Obtener la frase ingresada por el usuario
+      var frase = document.getElementById("frase").value;
+
+      // Convertir la frase a minúsculas para una comparación insensible a mayúsculas
+      frase = frase.toLowerCase();
+
+      // Crear una lista para almacenar las vocales encontradas
+      var vocalesEncontradas = [];
+
+      // Recorrer cada carácter de la frase
+      for (var i = 0; i < frase.length; i++) {
+        var caracter = frase.charAt(i);
+
+        // Verificar si el carácter actual es una vocal
+        if (caracter === "a" || caracter === "e" || caracter === "i" || caracter === "o" || caracter === "u") {
+          // Verificar si la vocal ya ha sido encontrada previamente
+          if (!vocalesEncontradas.includes(caracter)) {
+            // Agregar la vocal a la lista de vocales encontradas
+            vocalesEncontradas.push(caracter);
+          }
+        }
+      }
+
+      // Mostrar las vocales encontradas
+      var resultado = "Vocales encontradas: " + vocalesEncontradas.join(", ");
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+	
+	
+</head>
+<body bgcolor="#00FFFF" onLoad="startclock()">
+<nav class="navbar navbar-expand-sm navbar-dark bg-info rounded shadow mb-3">
+         <div class="container">
+			 <a class="badge badge-primary" href="Index.html" >CITII</a>
+			 
+			 <div class="logo">
+						<a href="Index.html" target="_blank"><img src="Logo2.png" width="100"></a>
+					</div>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto"> 
+                 <li class="nav-item">					  
+                     <a class="nav-link" href="Index.html">Home</a>
+                  </li>
+				   <li class="nav-item">					  
+                     <a class="nav-link" href="Javascriptreloj.html">Atras</a>
+                  </li>
+               </ul>                       
+            </div>
+         </div>
+      </nav>    
+   <div class="container">
+
+ 	<h1>Identificar Vocales</h1>
+  <label for="frase">Ingresa una frase:</label>
+ 
+	     <input type="text" id="frase" class="form-control"  placeholder="Ingrese una palabra">
+	   <button onclick="identificarVocales()" class="btn btn-success">Identificar</button>
+
+	   
+  <p id="resultado"></p>
+	
+  
+	   
+
+
+</body>
+</html>
